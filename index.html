@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List | Ashutosh Mishra</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="background-overlay"></div>
+  <div class="app-container">
+    <header>
+      <!-- <img src="A_logo_for_Ashutosh_Mishra_is_displayed_on_a_dark_.png" class="logo" alt="Ashutosh Mishra Logo"/> -->
+      <button id="theme-toggle">🌙</button>
+    </header>
+
+    <form id="todo-form">
+      <input type="text" id="todo-input" placeholder="Add a new task..." required />
+      <input type="date" id="due-date" title="Select Due Date" />
+      <button type="submit">Add</button>
+    </form>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+    </div>
+
+    <input type="text" id="search" placeholder="🔍 Search tasks..." />
+
+    <ul id="todo-list"></ul>
+
+    <div class="export-import">
+      <button onclick="exportTasks()">📤 Export</button>
+      <input type="file" id="import-file" accept=".json" onchange="importTasks(event)" />
+    </div>
+
+    <footer>
+      <p>Made with ❤️ by <strong>Ashutosh Mishra</strong></p>
+    </footer>
+  </div>
+
+  <div id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
